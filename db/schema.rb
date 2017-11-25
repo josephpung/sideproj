@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171125123313) do
   enable_extension "plpgsql"
 
   create_table "delivery_orders", force: :cascade do |t|
-    t.string "order_id"
+    t.string "order_id", null: false
     t.datetime "serving_datetime"
   end
 
