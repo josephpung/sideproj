@@ -1,24 +1,11 @@
-# README
+## Take Home Assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sh
+bundle
+yarn start
 
-Things you may want to cover:
+available paths:
+localhost:3000/orders
+localhost:3000/orders/:order_id
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
