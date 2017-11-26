@@ -12,4 +12,8 @@ RSpec.describe DeliveryOrder, type: :model do
      delivery = DeliveryOrder.new(serving_datetime: nil)
      expect(delivery).to_not be_valid
    end
+   it "is not valid without a valid delivery date and time entry" do
+     delivery = DeliveryOrder.new(serving_datetime: "2234234234234")
+     expect(delivery).to_not be_valid
+   end
 end
