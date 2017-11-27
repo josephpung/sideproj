@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @singleOrder = DeliveryOrder.where(order_id: params[:id]).first
+    @singleOrder = DeliveryOrder.where("lower(order_id) =?", params[:id].downcase).first
     @orderItems = OrderItem.where(delivery_order_id: @singleOrder.id)
     @orderArr = []
 

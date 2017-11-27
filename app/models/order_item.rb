@@ -2,6 +2,8 @@ class OrderItem < ApplicationRecord
   belongs_to :delivery_order
   belongs_to :meal
   validates_presence_of :quantity
+  has_one :feedback, as: :ratable_id
+
 
   def self.output_datetime(params)
     newobj = {}
