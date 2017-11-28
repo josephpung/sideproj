@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
     @orders = DeliveryOrder.all
     @resultArr = []
     @orders.each do |orders|
-
       @resultArr.push(OrderItem.output_datetime(orders))
     end
     render json: {

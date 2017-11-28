@@ -1,3 +1,3 @@
 class Feedback < ApplicationRecord
-  belongs_to :ratable_id, polymorphic: true
+  belongs_to :ratable, polymorphic: true
 end

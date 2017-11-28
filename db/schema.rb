@@ -21,14 +21,11 @@ ActiveRecord::Schema.define(version: 20171127152647) do
   end
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string "ratable_id_type"
-    t.bigint "ratable_id_id"
     t.string "ratable_type"
+    t.bigint "ratable_id"
     t.integer "rating"
     t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["ratable_id_type", "ratable_id_id"], name: "index_feedbacks_on_ratable_id_type_and_ratable_id_id"
+    t.index ["ratable_type", "ratable_id"], name: "index_feedbacks_on_ratable_type_and_ratable_id"
   end
 
   create_table "meals", force: :cascade do |t|
