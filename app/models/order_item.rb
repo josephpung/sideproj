@@ -20,8 +20,8 @@ class OrderItem < ApplicationRecord
   def self.output_mealdetails(params)
     indivOrderObj = {}
     indivOrderObj["name"] = Meal.find(params.meal_id).name
-    indivOrderObj["quantity"] = params.quantity
-    indivOrderObj["total_price"] = params.quantity*params.unit_price
+    # indivOrderObj["quantity"] = params.quantity
+    # indivOrderObj["total_price"] = params.quantity*params.unit_price
 
     return indivOrderObj
   end
