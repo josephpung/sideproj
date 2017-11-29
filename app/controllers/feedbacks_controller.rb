@@ -1,6 +1,9 @@
 class FeedbacksController < ApplicationController
+  def create
+
+  end
   def index
-    
+
   end
 
   def show

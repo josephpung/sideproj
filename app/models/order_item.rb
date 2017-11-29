@@ -15,13 +15,14 @@ class OrderItem < ApplicationRecord
       orderArray.push(indivOrderObj)
     end
     newobj = {}
+    newobj["id"] = params.id
     newobj["order_id"] = params.order_id
     currentTime = params.serving_datetime.strftime('%I:%M')
     endRange = params.serving_datetime + Rational("1800")
     rangeEndTime = endRange.strftime('%I:%M %p')
-    newobj['feedback_submitted'] = Feedback.where(ratable_type: "DeliveryOrder", ratable_id: params.id).count === 1 ? true : false
     newobj['delivery_date'] = params.serving_datetime.to_date
     newobj['delivery_time'] = currentTime.to_s + "-" + rangeEndTime.to_s
+    newobj['feedback_submitted'] = Feedback.where(ratable_type: "DeliveryOrder", ratable_id: params.id).count === 1 ? true : false
     newobj['order_items'] = orderArray
 
     return newobj
