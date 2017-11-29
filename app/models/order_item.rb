@@ -22,7 +22,7 @@ class OrderItem < ApplicationRecord
     rangeEndTime = endRange.strftime('%I:%M %p')
     newobj['delivery_date'] = params.serving_datetime.to_date
     newobj['delivery_time'] = currentTime.to_s + "-" + rangeEndTime.to_s
-    newobj['feedback_submitted'] = Feedback.where(ratable_type: "DeliveryOrder", ratable_id: params.id).count === 1 ? true : false
+    newobj['feedback_submitted'] = params.feedback ? true : false
     newobj['order_items'] = orderArray
 
     return newobj
